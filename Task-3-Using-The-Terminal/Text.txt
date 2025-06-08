@@ -1,0 +1,1 @@
+Task-3: Using the terminal, practice navigating through directories, listing file contents, and moving files to different locations.
