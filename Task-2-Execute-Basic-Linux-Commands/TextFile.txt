@@ -1,0 +1,3 @@
+Task-2 Execute basic Linux commands (e.g., ls, cd, mkdir, rm, touch) to manipulate files and directories, with an emphasis on understanding their usage.
+==>
+==>
