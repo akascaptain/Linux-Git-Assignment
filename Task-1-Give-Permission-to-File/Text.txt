@@ -1,0 +1,72 @@
+Task 1 Solution ==>>
+
+akashshinde@Devadatta:~$ cd ~
+
+akashshinde@Devadatta:~$ git clone git@github.com:akascaptain/Linux-Git-Assignment.git
+fatal: destination path 'Linux-Git-Assignment' already exists and is not an empty directory.
+
+akashshinde@Devadatta:~$ cd Linux-git-Assignment
+-bash: cd: Linux-git-Assignment: No such file or directory
+
+akashshinde@Devadatta:~$ cd ~/Linux-git-Assignment
+-bash: cd: /home/akashshinde/Linux-git-Assignment: No such file or directory
+
+akashshinde@Devadatta:~$ cd ~/Linux-Git-Assignment
+
+akashshinde@Devadatta:~/Linux-Git-Assignment$ cd Task-1-Give-Permission-to-File
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-1-Give-Permission-to-File$ nano akascript.sh
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-1-Give-Permission-to-File$ ls -l akascript.sh
+-rw-r--r-- 1 akashshinde akashshinde 29 Jun  8 19:08 akascript.sh
+
+//Permission Modification commands
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-1-Give-Permission-to-File$ chmod o-rwx akascript.sh
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-1-Give-Permission-to-File$ chmod 750 akascript.sh
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-1-Give-Permission-to-File$ chmod 754 akascript.sh
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-1-Give-Permission-to-File$ ls -l akascript.sh
+-rwxr-xr-- 1 akashshinde akashshinde 29 Jun  8 19:08 akascript.sh
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-1-Give-Permission-to-File$ cd ..
+akashshinde@Devadatta:~/Linux-Git-Assignment$ git add Task-1-Give-Permission-to-File/akascript.sh
+akashshinde@Devadatta:~/Linux-Git-Assignment$ git commit -m "added the task 1"
+[main 42abf7f] added the task 1
+ 1 file changed, 1 insertion(+)
+ create mode 100755 Task-1-Give-Permission-to-File/akascript.sh
+
+akashshinde@Devadatta:~/Linux-Git-Assignment$ git push origin main
+To github.com:akascaptain/Linux-Git-Assignment.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'github.com:akascaptain/Linux-Git-Assignment.git'hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+akashshinde@Devadatta:~/Linux-Git-Assignment$ git pull origin main --rebase
+remote: Enumerating objects: 5, done.
+
+akashshinde@Devadatta:~/Linux-Git-Assignment$
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (4/4), 1.68 KiB | 172.00 KiB/s, done.
+From github.com:akascaptain/Linux-Git-Assignment
+ * branch            main       -> FETCH_HEAD
+   66f01de..dbe50fc  main       -> origin/main
+Successfully rebased and updated refs/heads/main.
+
+akashshinde@Devadatta:~/Linux-Git-Assignment$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 379 bytes | 189.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:akascaptain/Linux-Git-Assignment.git
+   dbe50fc..cc50022  main -> main
+
+successfully pushed to the github and this was the text file for the command that i have run in the ubuntu shell
