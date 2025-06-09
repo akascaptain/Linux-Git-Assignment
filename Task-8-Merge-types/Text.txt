@@ -1,1 +1,114 @@
+akashshinde@Devadatta:~/Linux-Git-Assignment$ cd Task-8-Merge-types
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/akashshinde/Linux-Git-Assignment/Task-8-Merge-types/.git/
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ echo "This is main file of main branch" > mainfile.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git add mainfile.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git commit -m "commit on main"
+[master (root-commit) 671cc32] commit on main
+ 1 file changed, 1 insertion(+)
+ create mode 100644 mainfile.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git checkout -b new-branch
+Switched to a new branch 'new-branch'
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ echo "This is new branch" > newfile.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git add newfile.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git commit -m "commit on new branch"
+[new-branch 6c6b961] commit on new branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 newfile.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'origin'
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git pull origin main --rebase
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
 
+Please make sure you have the correct access rights
+and the repository exists.
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git remote add origin https://github.com/akascaptain/Linux-Git-Assignment.git
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/akascaptain/Linux-Git-Assignment.git'
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git branch
+  master
+* new-branch
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git push -u origin master
+Username for 'https://github.com': akascaptain
+Password for 'https://akascaptain@github.com':
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/akascaptain/Linux-Git-Assignment.git/'
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git push -u origin master
+Username for 'https://github.com': akascaptain
+Password for 'https://akascaptain@github.com':
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 246 bytes | 82.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/akascaptain/Linux-Git-Assignment/pull/new/master
+remote:
+To https://github.com/akascaptain/Linux-Git-Assignment.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git push -u origin feature-branch
+error: src refspec feature-branch does not match any
+error: failed to push some refs to 'https://github.com/akascaptain/Linux-Git-Assignment.git'
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/akascaptain/Linux-Git-Assignment.git'
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git push -u origin master
+Username for 'https://github.com': a
+Password for 'https://a@github.com':
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/akascaptain/Linux-Git-Assignment.git/'
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git push -u origin new-branch
+Username for 'https://github.com': akascaptain
+Password for 'https://akascaptain@github.com':
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/akascaptain/Linux-Git-Assignment.git/'
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git push -u origin new-branch
+Username for 'https://github.com': akascaptain
+Password for 'https://akascaptain@github.com':
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/akascaptain/Linux-Git-Assignment.git/'
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git push -u origin new-branch
+Username for 'https://github.com': akascaptain
+Password for 'https://akascaptain@github.com':
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/akascaptain/Linux-Git-Assignment.git/'
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git push -u origin new-branch
+Username for 'https://github.com': akascaptain
+Password for 'https://akascaptain@github.com':
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/akascaptain/Linux-Git-Assignment.git/'
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git push -u origin new-branch
+Username for 'https://github.com': akascaptain
+Password for 'https://akascaptain@github.com':
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/akascaptain/Linux-Git-Assignment.git/'
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ ls ~/.ssh/id_rsa.pub
+ls: cannot access '/home/akashshinde/.ssh/id_rsa.pub': No such file or directory
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$ git push -u origin new-branch
+Username for 'https://github.com': akascaptain
+Password for 'https://akascaptain@github.com':
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/akascaptain/Linux-Git-Assignment.git/'
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-8-Merge-types$
