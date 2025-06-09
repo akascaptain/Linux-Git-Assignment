@@ -1,1 +1,109 @@
 Task-6-version-control-and-Git-basics
+==>
+==>
+
+akashshinde@Devadatta:~$ sudo apt update
+[sudo] password for akashshinde:
+Hit:1 http://archive.ubuntu.com/ubuntu noble InRelease
+Get:2 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:3 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:5 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [21.6 kB]
+Get:6 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [52.2 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1113 kB]
+Get:8 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [208 B]
+Get:9 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [208 B]
+Get:10 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [161 kB]
+Get:11 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1078 kB]
+Get:12 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [376 kB]
+Get:13 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+Get:14 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+Get:15 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [7064 B]
+Get:16 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [16.4 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]
+Get:18 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+Fetched 3206 kB in 18s (182 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+166 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+akashshinde@Devadatta:~$ git config --list
+user.name=Akash Shinde
+user.email=akash.cap2607@gmail.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+
+akashshinde@Devadatta:~$ git init
+Reinitialized existing Git repository in /home/akashshinde/.git/
+
+akashshinde@Devadatta:~$ git add file.txt
+fatal: pathspec 'file.txt' did not match any files
+
+akashshinde@Devadatta:~$ cd Task-6-version-control-and-Git-basics
+-bash: cd: Task-6-version-control-and-Git-basics: No such file or directory
+
+akashshinde@Devadatta:~$ cd Linux-Git-Assignment
+akashshinde@Devadatta:~/Linux-Git-Assignment$ cd Task-6-version-control-and-Git-basics
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-6-version-control-and-Git-basics$ mkdir new-project
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-6-version-control-and-Git-basics$ cd new-project
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-6-version-control-and-Git-basics/new-project$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/akashshinde/Linux-Git-Assignment/Task-6-version-control-and-Git-basics/new-project/.git/
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-6-version-control-and-Git-basics/new-project$ echo "hello Git" > file.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-6-version-control-and-Git-basics/new-project$ git add file.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-6-version-control-and-Git-basics/new-project$ git commit -m "Added"
+[master (root-commit) 0fd5849] Added
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-6-version-control-and-Git-basics/new-project$ git remote add origin https://github.com/akascaptain/Linux-Git-Assignment.git
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-6-version-control-and-Git-basics/new-project$ git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/akascaptain/Linux-Git-Assignment.git'
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-6-version-control-and-Git-basics/new-project$ cd ..
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-6-version-control-and-Git-basics$ cd ,,
+-bash: cd: ,,: No such file or directory
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-6-version-control-and-Git-basics$ cd ..
+akashshinde@Devadatta:~/Linux-Git-Assignment$ git remote add origin https://github.com/akascaptain/Linux-Git-Assignment.git
+error: remote origin already exists.
+
+akashshinde@Devadatta:~/Linux-Git-Assignment$ git pull origin main --rebase
+remote: Enumerating objects: 17, done.
+remote: Counting objects: 100% (17/17), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 12 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (12/12), 5.31 KiB | 209.00 KiB/s, done.
+From github.com:akascaptain/Linux-Git-Assignment
+ * branch            main       -> FETCH_HEAD
+   3b9a862..fff37b0  main       -> origin/main
+Updating 3b9a862..fff37b0
+Fast-forward
+ Task-4-Create-a-New-User-and-Group/Text.txt | 96 +++++++++++++++++++++++++++++++++
+ Task-5-Practices-more-Commands/Text.txt     | 89 +++++++++++++++++++++++++++++-
+ newfolder/file name.txt                     |  1 +
+ 3 files changed, 185 insertions(+), 1 deletion(-)
+ create mode 100644 newfolder/file name.txt
+
+akashshinde@Devadatta:~/Linux-Git-Assignment$ git remote add origin https://github.com/akascaptain/Linux-Git-Assignment.git
+error: remote origin already exists.
+
+akashshinde@Devadatta:~/Linux-Git-Assignment$ git push -u origin main
+branch 'main' set up to track 'origin/main'.
+Everything up-to-date
+akashshinde@Devadatta:~/Linux-Git-Assignment$
