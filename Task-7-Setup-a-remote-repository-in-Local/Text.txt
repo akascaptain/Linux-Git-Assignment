@@ -1,1 +1,54 @@
 This is task 7
+
+
+akashshinde@Devadatta:~/Linux-Git-Assignment$ cd Task-7-Setup-a-remote-repository-in-Local
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-7-Setup-a-remote-repository-in-Local$ echo "This is task 7" > Text.txt
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-7-Setup-a-remote-repository-in-Local$ git add Text.txt
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-7-Setup-a-remote-repository-in-Local$ git commit -m "added task 7"
+[main 7615a91] added task 7
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-7-Setup-a-remote-repository-in-Local$ git remote add origin https://github.com/akascaptain/Linux-Git-Assignment.git
+error: remote origin already exists.
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-7-Setup-a-remote-repository-in-Local$ git remote -v
+origin  git@github.com:akascaptain/Linux-Git-Assignment.git (fetch)
+origin  git@github.com:akascaptain/Linux-Git-Assignment.git (push)
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-7-Setup-a-remote-repository-in-Local$ git push -u origin main
+To github.com:akascaptain/Linux-Git-Assignment.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'github.com:akascaptain/Linux-Git-Assignment.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-7-Setup-a-remote-repository-in-Local$ git pull origin main --rebase
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (4/4), 2.50 KiB | 319.00 KiB/s, done.
+From github.com:akascaptain/Linux-Git-Assignment
+ * branch            main       -> FETCH_HEAD
+   fff37b0..9759969  main       -> origin/main
+Successfully rebased and updated refs/heads/main.
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-7-Setup-a-remote-repository-in-Local$ git push -u origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 327 bytes | 327.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:akascaptain/Linux-Git-Assignment.git
+   9759969..e55c610  main -> main
+branch 'main' set up to track 'origin/main'.
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-7-Setup-a-remote-repository-in-Local$
