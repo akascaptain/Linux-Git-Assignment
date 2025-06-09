@@ -1,1 +1,70 @@
+Task-10:
 
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-9-Undo-the-last-commit$ cd ..
+akashshinde@Devadatta:~/Linux-Git-Assignment$ Tack-10-Branching-and-merging-in-Git
+Tack-10-Branching-and-merging-in-Git: command not found
+akashshinde@Devadatta:~/Linux-Git-Assignment$ cd Tack-10-Branching-and-merging-in-Gi
+t
+-bash: cd: Tack-10-Branching-and-merging-in-Git: No such file or directory
+akashshinde@Devadatta:~/Linux-Git-Assignment$ cd Task-10-Branching-and-merging-in-Gi
+t
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-10-Branching-and-merging-in-Git$ git checkout -b feature-branch
+Switched to a new branch 'feature-branch'
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-10-Branching-and-merging-in-Git$ git checkout -b new-branch
+Switched to a new branch 'new-branch'
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-10-Branching-and-merging-in-Git$ git add .
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-10-Branching-and-merging-in-Git$ git commit -m "working on new branch"
+On branch new-branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../Task-5-Practices-more-Commands/prac-direc/
+        ../Task-6-version-control-and-Git-basics/new-project/
+        ../Task-8-Merge-types/mainfile.txt
+        ../Task-8-Merge-types/newfile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-10-Branching-and-merging-in-Git$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-10-Branching-and-merging-in-Git$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-10-Branching-and-merging-in-Git$ git merge new-branch
+Already up to date.
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-10-Branching-and-merging-in-Git$ echo "This is a update" >> File.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-10-Branching-and-merging-in-Git$ git add File.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-10-Branching-and-merging-in-Git$ git commit -m "Add File.txt"
+[main 95c149e] Add File.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Task-10-Branching-and-merging-in-Git/File.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-10-Branching-and-merging-in-Git$ git merge new-branch
+Already up to date.
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-10-Branching-and-merging-in-Git$ git push origin main
+To github.com:akascaptain/Linux-Git-Assignment.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'github.com:akascaptain/Linux-Git-Assignment.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-10-Branching-and-merging-in-Git$ git pull origin main --rebase
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (4/4), 1.68 KiB | 429.00 KiB/s, done.
+From github.com:akascaptain/Linux-Git-Assignment
+ * branch            main       -> FETCH_HEAD
+   35c69c5..4012364  main       -> origin/main
+Successfully rebased and updated refs/heads/main.
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-10-Branching-and-merging-in-Git$ git push origin main
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 362 bytes | 90.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:akascaptain/Linux-Git-Assignment.git
+   4012364..75b7d38  main -> main
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-10-Branching-and-merging-in-Git$
