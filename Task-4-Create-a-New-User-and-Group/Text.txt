@@ -1,1 +1,97 @@
 Task-4: Create a new user and group, set their permissions, and explore user management commands like useradd, usermod, and userdel.
+==>
+==>
+
+akashshinde@Devadatta:~/Linux-Git-Assignment$ cd Task-4-Create-a-New-User-and-Group
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-4-Create-a-New-User-and-Group$ sudo groupadd capsgroup
+[sudo] password for akashshinde:
+Sorry, try again.
+[sudo] password for akashshinde:
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-4-Create-a-New-User-and-Group$ sudo groupadd starkgroup
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-4-Create-a-New-User-and-Group$ sudo useradd -m -c "Vision user1" -G starkgroup testuser2
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-4-Create-a-New-User-and-Group$ sudo passwd testuser2
+New password:
+Retype new password:
+Sorry, passwords do not match.
+passwd: Authentication token manipulation error
+passwd: password unchanged
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-4-Create-a-New-User-and-Group$ sudo passwd testuser2
+New password:
+Retype new password:
+passwd: password updated successfully
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-4-Create-a-New-User-and-Group$ id testuser1
+id: ‘testuser1’: no such user
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-4-Create-a-New-User-and-Group$ id testuser2
+uid=1001(testuser2) gid=1003(testuser2) groups=1003(testuser2),1002(starkgroup)
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-4-Create-a-New-User-and-Group$ groups testuser2
+testuser2 : testuser2 starkgroup
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-4-Create-a-New-User-and-Group$ sudo usermod -aG sudo testuser2
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-4-Create-a-New-User-and-Group$ sudo usermod -s /bin/bash testuser2
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-4-Create-a-New-User-and-Group$ sudo usermod -L testuser2
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-4-Create-a-New-User-and-Group$ sudo usermod -U testuser2
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-4-Create-a-New-User-and-Group$ sudo touch /home/testuser2/testfile2.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-4-Create-a-New-User-and-Group$ sudo chmod 640 /home/testuser2/testfile2.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-4-Create-a-New-User-and-Group$ cd ..
+akashshinde@Devadatta:~/Linux-Git-Assignment$ git add Task-4-Create-a-New-User-and-Group
+akashshinde@Devadatta:~/Linux-Git-Assignment$ git commit -m "Added"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Linux-Git-Assignment/
+        myscript.sh
+
+nothing added to commit but untracked files present (use "git add" to track)
+akashshinde@Devadatta:~/Linux-Git-Assignment$ git add .
+warning: adding embedded git repository: Linux-Git-Assignment
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> Linux-Git-Assignment
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached Linux-Git-Assignment
+hint:
+hint: See "git help submodule" for more information.
+akashshinde@Devadatta:~/Linux-Git-Assignment$ git commit -m "Added Task 4"
+[main f655f52] Added Task 4
+ 2 files changed, 2 insertions(+)
+ create mode 160000 Linux-Git-Assignment
+ create mode 100644 myscript.sh
+akashshinde@Devadatta:~/Linux-Git-Assignment$ git push origin main
+To github.com:akascaptain/Linux-Git-Assignment.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'github.com:akascaptain/Linux-Git-Assignment.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+akashshinde@Devadatta:~/Linux-Git-Assignment$ git pull origin main --rebase
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (4/4), 2.82 KiB | 206.00 KiB/s, done.
+From github.com:akascaptain/Linux-Git-Assignment
+ * branch            main       -> FETCH_HEAD
+   efc8cb7..cd232c9  main       -> origin/main
+warning: unable to rmdir 'Linux-Git-Assignment': Directory not empty
+Successfully rebased and updated refs/heads/main.
+akashshinde@Devadatta:~/Linux-Git-Assignment$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 359 bytes | 359.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:akascaptain/Linux-Git-Assignment.git
+   cd232c9..3b9a862  main -> main
+akashshinde@Devadatta:~/Linux-Git-Assignment$
+
