@@ -1,0 +1,40 @@
+akashshinde@Devadatta:~$ cd Linux-Git-Assignment
+akashshinde@Devadatta:~/Linux-Git-Assignment$ cd Task-9-Undo-the-last-commit
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-9-Undo-the-last-commit$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-9-Undo-the-last-commit$ git checkout main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-9-Undo-the-last-commit$ git pull origin main
+remote: Enumerating objects: 13, done.
+remote: Counting objects: 100% (13/13), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 8 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (8/8), 3.90 KiB | 159.00 KiB/s, done.
+From github.com:akascaptain/Linux-Git-Assignment
+ * branch            main       -> FETCH_HEAD
+   e55c610..b527e93  main       -> origin/main
+Updating e55c610..b527e93
+Fast-forward
+ Task-7-Setup-a-remote-repository-in-Local/Text.txt |  53 ++++++++++++
+ Task-8-Merge-types/Text.txt                        | 113 +++++++++++++++++++++++++
+ 2 files changed, 166 insertions(+)
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-9-Undo-the-last-commit$ git push origin main
+Everything up-to-date
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-9-Undo-the-last-commit$ git rm Text.txt
+rm 'Task-9-Undo-the-last-commit/Text.txt'
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-9-Undo-the-last-commit$ git commit -m "Removed file"
+[main 35c69c5] Removed file
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 Task-9-Undo-the-last-commit/Text.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-9-Undo-the-last-commit$ git push origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 229 bytes | 229.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:akascaptain/Linux-Git-Assignment.git
+   b527e93..35c69c5  main -> main
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-9-Undo-the-last-commit$
