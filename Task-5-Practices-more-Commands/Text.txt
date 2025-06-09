@@ -1,1 +1,88 @@
-Task-5: Practices-more-Commands
+Task-5: Practices more Linux Commands
+
+==>
+==>
+
+akashshinde@Devadatta:~/Linux-Git-Assignment$ cd ..
+
+akashshinde@Devadatta:~$ cd Linux-Git-Assignment
+
+akashshinde@Devadatta:~/Linux-Git-Assignment$ cd Task-5-Practice-more-Commands
+-bash: cd: Task-5-Practice-more-Commands: No such file or directory
+
+akashshinde@Devadatta:~/Linux-Git-Assignment$ cd Task-5-Practices-more-Commands
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands$ mkdir prac-direc
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands$ cd prac-direc
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ touch fileA.txt fileB.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ mkdir subdirec1 subdirec2
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ mv fileA.txt subdirec1/
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ cp fileA.txt subdirec1/
+cp: cannot stat 'fileA.txt': No such file or directory
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ cp fileB.txt subdirec1/
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ echo "captain is here" > subdirec1/fileA.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ cat subdirec1/fileA.txt
+captain is here
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ head -n 1 subdirec1/fileA.txt
+captain is here
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ wc -w subdirec1/fileA.txt
+3 subdirec1/fileA.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ grep "captain" subdrec1/fileA.txt
+grep: subdrec1/fileA.txt: No such file or directory
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ find . -name "*.txt"
+./subdirec1/fileA.txt
+./subdirec1/fileB.txt
+./fileB.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ rm subdirec2/fileB.txt
+rm: cannot remove 'subdirec2/fileB.txt': No such file or directory
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ rmdir subdirec2
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ chmod 744 subdirec/fileA.txt
+chmod: cannot access 'subdirec/fileA.txt': No such file or directory
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ chmod 744 subdirec1/fileA.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ tree
+.
+├── fileB.txt
+└── subdirec1
+    ├── fileA.txt
+    └── fileB.txt
+
+2 directories, 3 files
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ whoami
+akashshinde
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ id
+uid=1000(akashshinde) gid=1000(akashshinde) groups=1000(akashshinde),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),100(users),107(netdev)
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+none            1.9G     0  1.9G   0% /usr/lib/modules/5.15.167.4-microsoft-standard-WSL2
+none            1.9G  4.0K  1.9G   1% /mnt/wsl
+drivers         156G  139G   17G  90% /usr/lib/wsl/drivers
+/dev/sdc       1007G  1.6G  955G   1% /
+none            1.9G   76K  1.9G   1% /mnt/wslg
+none            1.9G     0  1.9G   0% /usr/lib/wsl/lib
+rootfs          1.9G  2.4M  1.9G   1% /init
+none            1.9G  772K  1.9G   1% /run
+none            1.9G     0  1.9G   0% /run/lock
+none            1.9G     0  1.9G   0% /run/shm
+tmpfs           4.0M     0  4.0M   0% /sys/fs/cgroup
+none            1.9G   76K  1.9G   1% /mnt/wslg/versions.txt
+none            1.9G   76K  1.9G   1% /mnt/wslg/doc
+C:\             156G  139G   17G  90% /mnt/c
+D:\              83G   52G   32G  63% /mnt/d
+tmpfs           386M   16K  386M   1% /run/user/1000
+snapfuse         51M   51M     0 100% /snap/snapd/24505
+snapfuse         74M   74M     0 100% /snap/core22/1981
+snapfuse        4.5M  4.5M     0 100% /snap/tree/54
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ du -sh
+12K     .
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ script work.txt
+Script started, output log file is 'work.txt'.
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ nano script.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ nano script.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands/prac-direc$ cd ..
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-5-Practices-more-Commands$ cd ..
+akashshinde@Devadatta:~/Linux-Git-Assignment$ git add Task-5-Practice-more-Commands
+fatal: pathspec 'Task-5-Practice-more-Commands' did not match any files
+akashshinde@Devadatta:~/Linux-Git-Assignment$
