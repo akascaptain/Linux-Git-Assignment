@@ -1,1 +1,191 @@
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-10-Branching-and-merging-in-Git$ cd ..
+akashshinde@Devadatta:~/Linux-Git-Assignment$ Task-11-Practice-More-git-commands
+Task-11-Practice-More-git-commands: command not found
+akashshinde@Devadatta:~/Linux-Git-Assignment$ cd Task-11-Practice-More-git-commands
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-11-Practice-More-git-commands$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
 
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../Task-5-Practices-more-Commands/prac-direc/
+        ../Task-6-version-control-and-Git-basics/new-project/
+        ../Task-8-Merge-types/mainfile.txt
+        ../Task-8-Merge-types/newfile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-11-Practice-More-git-commands$ git checkout -b test-branch
+Switched to a new branch 'test-branch'
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-11-Practice-More-git-commands$ echo "Temporary change" >> temp.txt
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-11-Practice-More-git-commands$ git stash
+No local changes to save
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-11-Practice-More-git-commands$ git stash list
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-11-Practice-More-git-commands$ git stash apply
+No stash entries found.
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-11-Practice-More-git-commands$ git log --oneline --graph --all
+* 75b7d38 (HEAD -> test-branch, origin/main, origin/HEAD, main) Add File.txt
+* 4012364 Create NewText.txt
+* 35c69c5 (new-branch, feature-branch) Removed file
+* b527e93 Update Text.txt
+* a4e56d1 Update Text.txt
+* e55c610 added task 7
+* 9759969 Update Text.txt
+* fff37b0 Create file name.txt
+* de4da5f Update Text.txt
+* 04c57ad Update Text.txt
+* 3b9a862 Added Task 4
+* cd232c9 Update Text.txt
+* efc8cb7 Added
+* 8f386b8 Create Text.txt
+* b36a1c5 Create Text.txt
+* 0016d08 Create Text.txt
+* 3f70183 Create Text.txt
+* faa262c Create Text.txt
+...skipping...
+
+                   SUMMARY OF LESS COMMANDS
+
+      Commands marked with * may be preceded by a number, N.
+      Notes in parentheses indicate the behavior if N is given.
+      A key preceded by a caret indicates the Ctrl key; thus ^K is ctrl-K.
+
+  h  H                 Display this help.
+  q  :q  Q  :Q  ZZ     Exit.
+ ---------------------------------------------------------------------------
+
+                           MOVING
+
+  e  ^E  j  ^N  CR  *  Forward  one line   (or N lines).
+  y  ^Y  k  ^K  ^P  *  Backward one line   (or N lines).
+  f  ^F  ^V  SPACE  *  Forward  one window (or N lines).
+  b  ^B  ESC-v      *  Backward one window (or N lines).
+  z                 *  Forward  one window (and set window to N).
+HELP -- Press RETURN for more, or q when done...skipping...
+* 75b7d38 (HEAD -> test-branch, origin/main, origin/HEAD, main) Add File.txt
+* 4012364 Create NewText.txt
+* 35c69c5 (new-branch, feature-branch) Removed file
+* b527e93 Update Text.txt
+* a4e56d1 Update Text.txt
+* e55c610 added task 7
+* 9759969 Update Text.txt
+* fff37b0 Create file name.txt
+* de4da5f Update Text.txt
+* 04c57ad Update Text.txt
+* 3b9a862 Added Task 4
+* cd232c9 Update Text.txt
+* efc8cb7 Added
+* 8f386b8 Create Text.txt
+* b36a1c5 Create Text.txt
+* 0016d08 Create Text.txt
+* 3f70183 Create Text.txt
+* faa262c Create Text.txt
+:
+* 75b7d38 (HEAD -> test-branch, origin/main, origin/HEAD, main) Add File.txt
+* 4012364 Create NewText.txt
+* 35c69c5 (new-branch, feature-branch) Removed file
+* b527e93 Update Text.txt
+* a4e56d1 Update Text.txt
+* e55c610 added task 7
+* 9759969 Update Text.txt
+* fff37b0 Create file name.txt
+* de4da5f Update Text.txt
+* 04c57ad Update Text.txt
+* 3b9a862 Added Task 4
+* cd232c9 Update Text.txt
+* efc8cb7 Added
+* 8f386b8 Create Text.txt
+* b36a1c5 Create Text.txt
+* 0016d08 Create Text.txt
+* 3f70183 Create Text.txt
+* faa262c Create Text.txt
+* 8d6f77b Create Text.txt
+* 688fa00 Create Text.txt
+* 343d0fb Delete Task-5-Practices-more-Commands
+* 560906f Create Task-5-Practices-more-Commands
+* 3cad548 Delete Task-2-Practices-more-Commands directory
+* f974b24 Create Text.txt
+* cd51429 Update TextFile.txt
+* ed70b38 Done
+* caad80f Create Text.txt
+* cc50022 added the task 1
+* dbe50fc Delete akascript.sh
+* 8bd81cd Delete Task-1-Give-Permission-to-File directory
+* 66f01de akascript is added
+* ed109f6 Create Text.txt
+* b96bb2d Create Text.txt
+* 8b2a66b Create TextFile.txt
+* 3e1d1d8 Update TextFile.txt
+* c67b0fc Create TextFile.txt
+* d830165 Create ReadMe.md
+...skipping...
+
+                   SUMMARY OF LESS COMMANDS
+
+      Commands marked with * may be preceded by a number, N.
+      Notes in parentheses indicate the behavior if N is given.
+      A key preceded by a caret indicates the Ctrl key; thus ^K is ctrl-K.
+
+  h  H                 Display this help.
+  q  :q  Q  :Q  ZZ     Exit.
+ ---------------------------------------------------------------------------
+
+                           MOVING
+
+  e  ^E  j  ^N  CR  *  Forward  one line   (or N lines).
+  y  ^Y  k  ^K  ^P  *  Backward one line   (or N lines).
+  f  ^F  ^V  SPACE  *  Forward  one window (or N lines).
+  b  ^B  ESC-v      *  Backward one window (or N lines).
+  z                 *  Forward  one window (and set window to N).
+  w                 *  Backward one window (and set window to N).
+  ESC-SPACE         *  Forward  one window, but don't stop at end-of-file.
+HELP -- Press RETURN for more, or q when done...skipping...
+* 688fa00 Create Text.txt
+* 343d0fb Delete Task-5-Practices-more-Commands
+* 560906f Create Task-5-Practices-more-Commands
+* 3cad548 Delete Task-2-Practices-more-Commands directory
+* f974b24 Create Text.txt
+* cd51429 Update TextFile.txt
+* ed70b38 Done
+* caad80f Create Text.txt
+* cc50022 added the task 1
+* dbe50fc Delete akascript.sh
+* 8bd81cd Delete Task-1-Give-Permission-to-File directory
+* 66f01de akascript is added
+* ed109f6 Create Text.txt
+* b96bb2d Create Text.txt
+* 8b2a66b Create TextFile.txt
+* 3e1d1d8 Update TextFile.txt
+* c67b0fc Create TextFile.txt
+* d830165 Create ReadMe.md
+
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-11-Practice-More-git-commands$ git tag v1.0
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-11-Practice-More-git-commands$ git rm --cached Text.txt
+rm 'Task-11-Practice-More-git-commands/Text.txt'
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-11-Practice-More-git-commands$ git restore Text.txt
+error: pathspec 'Text.txt' did not match any file(s) known to git
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-11-Practice-More-git-commands$ git branch
+  feature-branch
+  main
+  new-branch
+* test-branch
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-11-Practice-More-git-commands$ git branch -d feature-branch
+Deleted branch feature-branch (was 35c69c5).
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-11-Practice-More-git-commands$ git log --stat
+commit 75b7d38db3b396c3421ed11d32df4da2b5374b73 (HEAD -> test-branch, tag: v1.0, origin/main, origin/HEAD, main)
+Author: Akash Shinde <akash.cap2607@gmail.com>
+Date:   Mon Jun 9 09:02:14 2025 +0000
+
+    Add File.txt
+
+ Task-10-Branching-and-merging-in-Git/File.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 4012364d4a1952cfd3148007ff05479534f2f7ed
+Author: akascaptain <akash.cap2607@gmail.com>
+Date:   Mon Jun 9 14:24:01 2025 +0530
+
+    Create NewText.txt
+
+ Task-9-Undo-the-Last-Commit/NewText.txt | 40 +++++++++++++++++++++++++++++++++++++
+ 1 file changed, 40 insertions(+)
+akashshinde@Devadatta:~/Linux-Git-Assignment/Task-11-Practice-More-git-commands$
